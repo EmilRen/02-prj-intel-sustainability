@@ -1,1 +1,180 @@
+/* Reusable colors for the page */
+:root {
+	--page-background: #f7f9fc;
+	--primary-blue: #0068b5;
+	--accent-teal: #2fae8f;
+	--text-dark: #1f2937;
+	--text-secondary: #667085;
+	--border-light: #e4e7ec;
+	--card-background: #ffffff;
+}
+
+/* Make sizing easier to control */
+* {
+	box-sizing: border-box;
+}
+
+/* Set the overall page colors and readable text */
+body {
+	margin: 0;
+	background-color: var(--page-background);
+	color: var(--text-dark);
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+}
+
+/* Create a strong Intel-blue introduction area */
+header {
+	padding: 24px 24px 12px;
+	background-color: var(--primary-blue);
+	color: var(--card-background);
+	text-align: center;
+}
+
+header div {
+	max-width: 760px;
+	margin: 0 auto;
+}
+
+header img {
+	width: 120px;
+	margin-bottom: 16px;
+}
+
+h1,
+h2,
+h3,
+p {
+	margin-top: 0;
+}
+
+h1 {
+	margin-bottom: 12px;
+	font-size: 2.5rem;
+	line-height: 1.2;
+}
+
+header p {
+	max-width: 650px;
+	margin: 0 auto;
+	color: #e8f4fc;
+}
+
+/* Keep the timeline in one row so users can scroll through all cards */
+section {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	overflow-x: auto;
+	gap: 24px;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 30px 24px 5px;
+}
+
+/* Each timeline item stays white so it stands out from the page */
+section > div {
+	flex: 0 0 calc((100% - 48px) / 3);
+	min-height: 260px;
+	padding: 24px;
+	background-color: var(--card-background);
+	border: 1px solid var(--border-light);
+	border-top: 4px solid var(--primary-blue);
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(31, 41, 55, 0.06);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, min-height 0.2s ease;
+}
+
+section > div img {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	margin-bottom: 16px;
+}
+
+section > div {
+	position: relative;
+	overflow: hidden;
+	background-color: #111827;
+}
+
+section > div img {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	object-fit: cover;
+	opacity: 0.35;
+}
+
+section > div h2,
+section > div h3,
+section > div p {
+	position: relative;
+	z-index: 1;
+	color: var(--card-background);
+}
+
+section > div:hover,
+section > div:focus {
+	transform: translateY(-4px);
+	min-height: 300px;
+	border-top-color: var(--accent-teal);
+	box-shadow: 0 8px 18px rgba(31, 41, 55, 0.1);
+}
+
+section p {
+	display: none;
+}
+
+section > div:hover p,
+section > div:focus p {
+	display: block;
+}
+
+section h2 {
+	margin-bottom: 4px;
+	color: var(--primary-blue);
+	font-size: 1.8rem;
+}
+
+section h3 {
+	margin-bottom: 12px;
+	color: var(--text-dark);
+	font-size: 1.2rem;
+}
+
+section p,
+body > p {
+	color: var(--text-secondary);
+}
+
+body > p {
+	padding: 0 24px 32px;
+	text-align: center;
+	font-size: 0.95rem;
+}
+
+/* Keep the heading comfortable to read on small screens */
+@media (max-width: 600px) {
+	header {
+		padding: 36px 20px;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	section {
+		flex-direction: column;
+		overflow-x: visible;
+		padding: 32px 20px 16px;
+	}
+
+	section > div {
+		width: 100%;
+	}
+}
 /* Add your CSS here */
